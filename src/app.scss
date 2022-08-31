@@ -1,0 +1,51 @@
+.main {
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    transition: .3s;
+    position: relative;
+
+    &::after {
+        content: "News";
+        position: absolute;
+        font-size: 4rem;
+        font-weight: 900;
+        color: rgba(44, 143, 255, 0.4);
+        z-index: 0;
+    }
+
+    &::before {
+        content: attr(data-searchTerm);
+        font-size: 1.7rem;
+        font-style: italic;
+        font-weight: 900;
+        color: rgba(44, 143, 255, 0.8);
+        z-index: 0;
+        position: absolute;
+        top: 53%;
+        left: 50%;
+    }
+
+    .loading {
+        position: absolute;
+        font-size: 1.5rem;
+        color: rgba(44, 143, 255, 1);
+        top: 60%;
+        animation: loading 1s infinite;
+    }
+    
+    .nothing-found {
+        position: absolute;
+        font-size: 1.5rem;
+        color: rgba(44, 143, 255, 1);
+        top: 70%;
+    }
+}
+
+@keyframes loading {
+	0% {opacity: .8}
+	50% {opacity: .2;}
+}

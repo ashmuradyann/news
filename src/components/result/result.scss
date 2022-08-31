@@ -1,0 +1,22 @@
+.result {
+    width: 50vw;
+    height: 45vh;
+    gap: .5em;
+    transform: scale(5);
+    transition: transform 1s cubic-bezier(.075, 1, .25, 1), opacity 1s;
+    will-change: transform;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 1;
+
+    &* {
+        transition: .3s;
+    }
+}
+
+.loaded .result {
+    opacity: 1;
+}
