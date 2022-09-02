@@ -22,7 +22,7 @@ const Result = ({ content, loaded }) => {
                 dragElastic={2}
                 whileTap={{ cursor: "grab" }}
                 >
-                {content.slice(0, -60).filter(el => el.urlToImage !== null).map((element, i) => <NewsCard key={i} element={element} setShowMore={setShowMore} />)}
+                {content && content.slice(0, -60).filter(el => el.urlToImage !== null).map((element, i) => <NewsCard key={i} element={element} setShowMore={setShowMore} />)}
             </motion.div>
             <Description showMore={showMore} setShowMore={setShowMore} />
         </>
