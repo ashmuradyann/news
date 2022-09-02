@@ -15,10 +15,6 @@
     padding: 10px;
     overflow-y: auto;
 
-    &::webkit-scrollbar {
-        width: 50px;
-    }
-
     .description-header {
         width: 100%;
         height: fit-content;

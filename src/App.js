@@ -27,13 +27,12 @@ const App = () => {
       setLoaded(true)
   }, 1500)
 
-
   return (
-    <div className="main" data-searchTerm={searchTerm || ""}>
-      <SearchBar bool={content.length === 0} setSearchTerm={setSearchTerm} setLoaded={setLoaded} />
+    <div className="main" data-searchTerm={searchTerm}>
+      <SearchBar content={content} setSearchTerm={setSearchTerm} setLoaded={setLoaded} />
       <Result loaded={loaded} content={content} />
       <p style={loaded ? {opacity: 0, animationName: "none"} : {opacity: 1}} className="loading">Loading...</p>
-      {loaded && content.length === 0 && <p className="nothing-found">Nothing found</p>}
+      {loaded && !content && <p className="nothing-found">Nothing found</p>}
     </div>
   )
 }

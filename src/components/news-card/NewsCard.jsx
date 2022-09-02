@@ -7,14 +7,9 @@ const NewsCard = ({ element, setShowMore }) => {
   const { source, title, urlToImage, publishedAt } = element
 
   return (
-    <div className="news-card" onClick={() => setShowMore(prev => {
-      return {
-        showed: true,
-        element: element,
-      }
-    })}>
-      <img src={urlToImage} alt="is not loaded" />
-      <div className="info-area">
+    <div className="news-card">
+      <div className="img" style={{backgroundImage: `url(${urlToImage})`}}></div>
+      <div className="info-area" onClick={() => setShowMore({ showed: true, element: element })}>
         <p className="title">{title}</p>
         <div>
           <p className="author">{source?.name ? source?.name : "unknown"}</p>
